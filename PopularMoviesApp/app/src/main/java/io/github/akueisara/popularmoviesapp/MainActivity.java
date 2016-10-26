@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         Uri baseUri = Uri.parse(MOVIE_REQUEST_URL + mSortBy);
         Uri.Builder uriBuilder = baseUri.buildUpon();
-        uriBuilder.appendQueryParameter("api_key", "b7c08ce2e5830c458a57fddfb7976b13");
+        uriBuilder.appendQueryParameter("api_key", "Please use your own api key.");
         uriBuilder.appendQueryParameter("language","en-US");
         uriBuilder.appendQueryParameter("page", String.valueOf(mPage));
         return new MovieLoader(this, uriBuilder.toString());
