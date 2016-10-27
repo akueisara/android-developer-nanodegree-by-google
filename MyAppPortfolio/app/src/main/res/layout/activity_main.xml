@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.github.akueisara.myappportfolio.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLightGrey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="@string/my_title"
+                android:textColor="@color/colorUdacious"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button_1"
+                style="@style/ButtonStyle"
+                android:layout_gravity="center"
+                android:text="@string/pop_movies" />
+
+            <Button
+                android:id="@+id/button_2"
+                style="@style/ButtonStyle"
+                android:layout_gravity="center"
+                android:text="@string/stock_hawk" />
+
+
+            <Button
+                android:id="@+id/button_3"
+                style="@style/ButtonStyle"
+                android:layout_gravity="center"
+                android:text="@string/build_bigger" />
+
+            <Button
+                android:id="@+id/button_4"
+                style="@style/ButtonStyle"
+                android:layout_gravity="center"
+                android:text="@string/make_app_material" />
+
+            <Button
+                android:id="@+id/button_5"
+                style="@style/ButtonStyle"
+                android:layout_gravity="center"
+                android:text="@string/go_ubiquitous" />
+
+            <Button
+                android:id="@+id/button_6"
+                style="@style/ButtonStyle"
+                android:layout_gravity="center"
+                android:text="@string/capstone" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
