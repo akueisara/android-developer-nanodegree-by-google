@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_movie"
+    android:name="io.github.akueisara.popularmoviesappp2.MovieFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.github.akueisara.popularmoviesappp2.MovieFragment"
+    tools:layout="@android:layout/list_content" />
+
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:id="@+id/fragment_movie"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context=".MainActivity"-->
+    <!--tools:ignore="MergeRootFrame" />-->
