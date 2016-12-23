@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Stock Hawk</string>
+
+    <string name="pref_stocks_initialized_key" translatable="false">initialized</string>
+
+    <string name="pref_stocks_key">stocks</string>
+
+    <string name="chart_no_data">No data</string>
+
+
+    <string name="pref_display_mode_title">Display Mode</string>
+    <string name="pref_display_mode_key">displayMode</string>
+    <string name="pref_display_mode_default">@string/pref_display_mode_percentage_key</string>
+
+    <string name="pref_display_mode_absolute_key">absolute</string>
+    <string name="pref_display_mode_percentage_key">percentage</string>
+
+    <string name="default_stocks_yahoo">YHOO</string>
+    <string name="default_stocks_apple">AAPL</string>
+    <string name="default_stocks_microsoft">MSFT</string>
+    <string name="default_stocks_facebook">FB</string>
+
+
+    <string name="action_change_units">@string/pref_display_mode_key</string>
+
+
+    <string name="dialog_title">Add Stock</string>
+    <string name="dialog_hint">Symbol (e.g. GOOG)</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_add">Add</string>
+
+    <string name="error_stock_not_found">Symbol %s is invalid!</string>
+    <string name="error_no_network">No network connectivity! Will load stock cursor when the network is available.</string>
+    <string name="error_no_stocks">No stocks added! Hit the floating action button to add one.</string>
+
+    <string name="toast_stock_added_no_connectivity">Symbol %s added. Will refresh when network available.</string>
+    <string name="toast_no_connectivity">Will refresh when network available.</string>
+
+    <string name="chart_label">Stock</string>
+
+    <string name="title_widget_stock">Stocks</string>
+    <string name="empty_stock_list">No stock data available</string>
+
+    <string name="content_description_fab">Use this button to add a new stock</string>
+    <string name="content_description_price">Price</string>
+    <string name="content_description_change">Change in Price</string>
+    <string name="content_description_symbol">Stock Symbol</string>
+    <string name="content_description_change_units">Change Units</string>
+    <string name="content_description_plot">Stock history data</string>
+
+</resources>
