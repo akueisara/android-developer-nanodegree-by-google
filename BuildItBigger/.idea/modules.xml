@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FinalProject.iml" filepath="$PROJECT_DIR$/FinalProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/telljokes/telljokes.iml" filepath="$PROJECT_DIR$/telljokes/telljokes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/telljokes-android/telljokes-android.iml" filepath="$PROJECT_DIR$/telljokes-android/telljokes-android.iml" />
+    </modules>
+  </component>
+</project>
