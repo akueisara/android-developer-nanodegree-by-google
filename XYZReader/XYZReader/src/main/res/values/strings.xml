@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">XYZ Reader</string>
+    <string name="welcome_xyz_reader">Welcome to XYZ Reader!</string>
+
+    <string name="action_refresh">Refresh</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_share">Share</string>
+
+    <string name="transition_image">t_image</string>
+    <string name="transition_title">t_title</string>
+    <string name="transition_subtitle">t_subtitle</string>
+</resources>

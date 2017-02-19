@@ -1,0 +1,23 @@
+<resources>
+    <!--List Item-->
+    <dimen name="list_item_article_title_padding">16dp</dimen>
+    <dimen name="list_item_article_title_padding_bottom">4dp</dimen>
+    <dimen name="list_item_article_subtitle_padding">16dp</dimen>
+    <dimen name="list_item_space_margin">4dp</dimen>
+
+    <!-- detail -->
+    <dimen name="app_bar_elevation">4dp</dimen>
+
+    <dimen name="detail_title_text_size">20sp</dimen>
+    <dimen name="detail_body_text_size">18sp</dimen>
+    <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
+
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="fab_press_translation_z">6dp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
+
+    <dimen name="sheetMarginBottom">0dp</dimen>
+
+
+
+</resources>

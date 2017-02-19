@@ -1,0 +1,7 @@
+<resources>
+    <!-- detail -->
+    <bool name="detail_is_card">true</bool>
+    <dimen name="detail_photo_height">224dp</dimen>
+    <dimen name="detail_inner_horiz_margin">40dp</dimen>
+    <dimen name="detail_card_max_width">550dp</dimen>
+</resources>
