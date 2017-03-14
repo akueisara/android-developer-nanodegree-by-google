@@ -21,12 +21,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.text.format.DateUtils;
+import android.util.Log;
 
 import com.example.android.sunshine.data.SunshinePreferences;
 import com.example.android.sunshine.data.WeatherContract;
 import com.example.android.sunshine.utilities.NetworkUtils;
 import com.example.android.sunshine.utilities.NotificationUtils;
 import com.example.android.sunshine.utilities.OpenWeatherJsonUtils;
+import com.example.android.sunshine.utilities.SunshineWeatherUtils;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.PutDataRequest;
@@ -38,6 +40,7 @@ import static com.example.android.sunshine.data.WeatherContract.WeatherEntry.COL
 import static com.example.android.sunshine.utilities.NotificationUtils.INDEX_MAX_TEMP;
 import static com.example.android.sunshine.utilities.NotificationUtils.INDEX_MIN_TEMP;
 import static com.example.android.sunshine.utilities.NotificationUtils.INDEX_WEATHER_ID;
+import static com.example.android.sunshine.utilities.SunshineWeatherUtils.formatTemperature;
 import static java.security.AccessController.getContext;
 
 public class SunshineSyncTask {
@@ -156,12 +159,14 @@ public class SunshineSyncTask {
         Cursor cursor = context.getContentResolver().query(weatherUri, WEATHER_NOTIFICATION_PROJECTION, null, null, null);
         if (cursor.moveToFirst()) {
             int weatherId = cursor.getInt(INDEX_WEATHER_ID);
-            String highTemp = cursor.getString(INDEX_MAX_TEMP);
-            String lowTemp = cursor.getString(INDEX_MIN_TEMP);
+            Double highTemp = cursor.getDouble(INDEX_MAX_TEMP);
+            Double lowTemp = cursor.getDouble(INDEX_MIN_TEMP);
+            String formattedHigh = formatTemperature(context, highTemp);
+            String formattedLow = formatTemperature(context, lowTemp);
 
             PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(KEY_PATH);
-            putDataMapRequest.getDataMap().putString(KEY_HIGH_TEMP, highTemp);
-            putDataMapRequest.getDataMap().putString(KEY_LOW_TEMP, lowTemp);
+            putDataMapRequest.getDataMap().putString(KEY_HIGH_TEMP, formattedHigh);
+            putDataMapRequest.getDataMap().putString(KEY_LOW_TEMP, formattedLow);
             putDataMapRequest.getDataMap().putInt(KEY_WEATHER_ID, weatherId);
             PutDataRequest request = putDataMapRequest.asPutDataRequest();
             Wearable.DataApi.putDataItem(googleApiClient, request);

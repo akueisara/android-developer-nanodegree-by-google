@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.sunshine.app">
+    package="com.example.android.sunshine">
 
     <uses-feature android:name="android.hardware.type.watch" />
 
@@ -10,7 +10,7 @@
     <application android:allowBackup="true" android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name" android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
-        <service android:name="io.github.akueisara.wearable.SunshineWatchFace" android:label="@string/my_digital_name"
+        <service android:name=".SunshineWatchFace" android:label="@string/my_digital_name"
             android:permission="android.permission.BIND_WALLPAPER">
             <meta-data android:name="android.service.wallpaper"
                 android:resource="@xml/watch_face" />

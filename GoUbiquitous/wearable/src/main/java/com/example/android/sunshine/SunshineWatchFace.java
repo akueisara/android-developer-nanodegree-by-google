@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.akueisara.wearable;
+package com.example.android.sunshine;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -40,7 +40,6 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.WindowInsets;
 
-import com.example.android.sunshine.app.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.wearable.DataApi;
@@ -333,9 +332,9 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
             canvas.drawLine(bounds.centerX() - 30, bounds.centerY(), bounds.centerX() + 30, bounds.centerY(), mDividerPaint);
 
             // fake data: my android phone can't be paired with  the android wear emulator and I don't have any android wer device QQ
-            //  mWeatherId = 800;
-            //  mHighTemp = "25";
-            //  mLowTemp = "20";
+              mWeatherId = 800;
+              mHighTemp = "25°";
+              mLowTemp = "20°";
 
             // Draw Temp & Icon
             if (mHighTemp != null && mLowTemp != null) {
@@ -343,20 +342,20 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
                 if (mAmbient) {
                     mLowTempTextPaint.setColor(getResources().getColor(R.color.digital_text));
                     float lowTextSize = mLowTempTextPaint.measureText(mLowTemp);
-                    float xOffset = bounds.centerX() - ((highTempTextSize + lowTextSize + 20) / 2);
+                    float xOffset = bounds.centerX() - ((highTempTextSize + lowTextSize + 10) / 2);
                     canvas.drawText(mHighTemp, xOffset, mWeatherYOffset, mHighTempTextPaint);
                     canvas.drawText(mLowTemp, xOffset + highTempTextSize + 20, mWeatherYOffset, mLowTempTextPaint);
                 } else {
                     mLowTempTextPaint.setColor(getResources().getColor(R.color.colorPrimaryLight));
                     float xOffset = bounds.centerX() - (highTempTextSize / 2);
                     canvas.drawText(mHighTemp, xOffset, mWeatherYOffset, mHighTempTextPaint);
-                    canvas.drawText(mLowTemp, bounds.centerX() + (highTempTextSize / 2) + 20, mWeatherYOffset, mLowTempTextPaint);
+                    canvas.drawText(mLowTemp, bounds.centerX() + (highTempTextSize / 2) + 10, mWeatherYOffset, mLowTempTextPaint);
 
                     Drawable b = getResources().getDrawable(getSmallArtResourceIdForWeatherCondition(mWeatherId));
                     Bitmap icon = ((BitmapDrawable) b).getBitmap();
                     float scaledWidth = (mHighTempTextPaint.getTextSize() / icon.getHeight()) * icon.getWidth();
                     Bitmap weatherIcon = Bitmap.createScaledBitmap(icon, (int) scaledWidth + 10, (int) mHighTempTextPaint.getTextSize() + 10, true);
-                    float iconXOffset = bounds.centerX() - ((highTempTextSize / 2) + weatherIcon.getWidth() + 30);
+                    float iconXOffset = bounds.centerX() - ((highTempTextSize / 2) + weatherIcon.getWidth() + 20);
                     canvas.drawBitmap(weatherIcon, iconXOffset, mWeatherYOffset - weatherIcon.getHeight() + 10, null);
                 }
             }
