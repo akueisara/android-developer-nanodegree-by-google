@@ -331,10 +331,10 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
             // Draw line
             canvas.drawLine(bounds.centerX() - 30, bounds.centerY(), bounds.centerX() + 30, bounds.centerY(), mDividerPaint);
 
-            // fake data: my android phone can't be paired with  the android wear emulator and I don't have any android wer device QQ
-              mWeatherId = 800;
-              mHighTemp = "25°";
-              mLowTemp = "20°";
+            // fake data: my android phone can't be paired with the android wear emulator and I don't have any android wer device QQ
+            //  mWeatherId = 800;
+            //  mHighTemp = "25°";
+            //  mLowTemp = "20°";
 
             // Draw Temp & Icon
             if (mHighTemp != null && mLowTemp != null) {
