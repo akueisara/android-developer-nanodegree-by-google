@@ -25,8 +25,11 @@ public class RecipeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         FragmentRecipeBinding binding = FragmentRecipeBinding.inflate(inflater);
 
+        RecipeAdapter recipeAdapter = new RecipeAdapter();
+        binding.recipesList.setAdapter(recipeAdapter);
+
         viewModel.recipes.observe(getViewLifecycleOwner(), apiResponse -> {
-            // show the recipe list
+            recipeAdapter.setRecipeList(apiResponse.body);
         });
 
         return binding.getRoot();

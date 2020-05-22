@@ -11,5 +11,5 @@ import java.util.List;
 
 public class RecipeViewModel extends ViewModel {
 
-    LiveData<ApiResponse<List<Recipe>>> recipes = BakingApiClient.getInstance().getRecipes();
+    public LiveData<ApiResponse<List<Recipe>>> recipes = BakingApiClient.getInstance().getRecipes();
 }
