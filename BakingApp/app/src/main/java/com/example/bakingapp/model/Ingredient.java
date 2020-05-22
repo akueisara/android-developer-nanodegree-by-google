@@ -1,7 +1,7 @@
 package com.example.bakingapp.model;
 
-class Ingredient {
-    Double quantity;
-    String measure;
-    String ingredient;
+public class Ingredient {
+    public Double quantity;
+    public String measure;
+    public String ingredient;
 }
