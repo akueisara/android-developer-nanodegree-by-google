@@ -13,14 +13,14 @@ public class BakingApiClient {
         if (mBakingApiService == null) {
             synchronized (BakingApiService.class) {
                 if (mBakingApiService == null) {
-                    mBakingApiService = getBakingApi();
+                    mBakingApiService = getBakingApiService();
                 }
             }
         }
         return mBakingApiService;
     }
 
-    private static BakingApiService getBakingApi() {
+    private static BakingApiService getBakingApiService() {
         final Moshi moshi = new Moshi.Builder().build();
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.addConverterFactory(MoshiConverterFactory.create(moshi));
