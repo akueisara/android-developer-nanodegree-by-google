@@ -1,10 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/recipeFragment">
 
     <fragment
         android:id="@+id/recipeFragment"
         android:name="com.example.bakingapp.ui.recipe.RecipeFragment"
-        android:label="RecipeFragment" />
+        android:label="RecipeFragment"
+        tools:layout="@layout/fragment_recipe">
+        <action
+            android:id="@+id/action_recipeFragment_to_recipeDetailsFragment"
+            app:destination="@id/recipeDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetailsFragment"
+        android:name="com.example.bakingapp.ui.recipedetails.RecipeDetailsFragment"
+        android:label="fragment_recipe_details"
+        tools:layout="@layout/fragment_recipe_details">
+        <argument
+            android:name="recipe"
+            app:argType="com.example.bakingapp.model.Recipe" />
+        <action
+            android:id="@+id/action_recipeDetailsFragment_to_stepDetailsFragment"
+            app:destination="@id/stepDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/stepDetailsFragment"
+        android:name="com.example.bakingapp.ui.stepdetails.StepDetailsFragment"
+        android:label="fragment_step_details"
+        tools:layout="@layout/fragment_step_details">
+        <argument
+            android:name="step"
+            app:argType="com.example.bakingapp.model.Step" />
+    </fragment>
 </navigation>

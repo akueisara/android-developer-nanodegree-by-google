@@ -20,7 +20,12 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     @NonNull
     @Override
     public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        RecipeItemBinding recipeItemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.recipe_item, parent, false);
+        RecipeItemBinding recipeItemBinding = DataBindingUtil.inflate(
+                LayoutInflater.from(parent.getContext()),
+                R.layout.recipe_item,
+                parent,
+                false
+        );
         return new RecipeViewHolder(recipeItemBinding);
     }
 
@@ -39,7 +44,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         }
     }
 
-    public void setRecipeList(List<Recipe> recipes) {
+    void setRecipeList(List<Recipe> recipes) {
         this.recipes = recipes;
         notifyDataSetChanged();
     }
@@ -48,7 +53,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
         final RecipeItemBinding binding;
 
-        public RecipeViewHolder(RecipeItemBinding binding) {
+        RecipeViewHolder(RecipeItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

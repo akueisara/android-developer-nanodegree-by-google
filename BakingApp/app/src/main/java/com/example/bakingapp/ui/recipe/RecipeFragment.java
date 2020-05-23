@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+
 import com.example.bakingapp.databinding.FragmentRecipeBinding;
 
 public class RecipeFragment extends Fragment {
@@ -26,7 +28,7 @@ public class RecipeFragment extends Fragment {
         FragmentRecipeBinding binding = FragmentRecipeBinding.inflate(inflater);
 
         RecipeAdapter recipeAdapter = new RecipeAdapter();
-        binding.recipesList.setAdapter(recipeAdapter);
+        binding.recipeListRecyclerView.setAdapter(recipeAdapter);
 
         viewModel.recipes.observe(getViewLifecycleOwner(), apiResponse -> {
             recipeAdapter.setRecipeList(apiResponse.body);
