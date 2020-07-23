@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.example.bakingapp.databinding.FragmentRecipeBinding;
 
@@ -27,7 +28,10 @@ public class RecipeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         FragmentRecipeBinding binding = FragmentRecipeBinding.inflate(inflater);
 
-        RecipeAdapter recipeAdapter = new RecipeAdapter();
+        RecipeAdapter recipeAdapter = new RecipeAdapter(recipe -> {
+            Navigation.findNavController(requireView()).navigate(RecipeFragmentDirections.actionRecipeFragmentToRecipeDetailsFragment(recipe));
+        });
+
         binding.recipeListRecyclerView.setAdapter(recipeAdapter);
 
         viewModel.recipes.observe(getViewLifecycleOwner(), apiResponse -> {

@@ -16,6 +16,15 @@ import java.util.List;
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
 
     private List<Recipe> recipes;
+    private OnRecipeItemClickListener listener;
+
+    public interface OnRecipeItemClickListener {
+        void onRecipeItemClicked(Recipe recipe);
+    }
+
+    RecipeAdapter(OnRecipeItemClickListener onRecipeItemClickListener) {
+        this.listener = onRecipeItemClickListener;
+    }
 
     @NonNull
     @Override
@@ -33,6 +42,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         Recipe recipe = recipes.get(position);
         holder.binding.setRecipe(recipe);
+        holder.itemView.setOnClickListener(view -> listener.onRecipeItemClicked(recipe));
     }
 
     @Override
