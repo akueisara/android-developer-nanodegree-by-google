@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import com.example.bakingapp.R;
 import com.example.bakingapp.databinding.FragmentRecipeBinding;
 
 public class RecipeFragment extends Fragment {
@@ -41,4 +42,9 @@ public class RecipeFragment extends Fragment {
         return binding.getRoot();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        requireActivity().setTitle(R.string.app_name);
+    }
 }

@@ -55,4 +55,15 @@ public class Recipe implements Parcelable {
             return new Recipe[size];
         }
     };
+
+    public String getIngredientDescription() {
+        StringBuilder descStringBuilder = new StringBuilder();
+        for(int i = 0; i < ingredients.size(); i++) {
+            descStringBuilder.append(ingredients.get(i).ingredient);
+            if(i != ingredients.size() - 1) {
+                descStringBuilder.append(", ");
+            }
+        }
+        return descStringBuilder.toString();
+    }
 }
